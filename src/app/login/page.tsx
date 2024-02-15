@@ -7,13 +7,16 @@ const Login = () => {
       <div className="bg-[#181B1C] h-[100vh] flex">
         {/* Login Section */}
         <div className="w-[60%]">
-          <Image
-            src={"/Project_Logo.svg"}
-            width={200}
-            height={100}
-            alt="Project Logo"
-          ></Image>
-          <div className="w-[50%] m-auto h-full">
+          <div className="flex items-center">
+            <Image
+              src={"/Project_Logo.svg"}
+              width={200}
+              height={100}
+              alt="Project Logo"
+            ></Image>
+            <p className="text-[#fff]">Hey this is the title of the Project</p>
+          </div>
+          <div className="w-[50%] m-auto">
             <div className="text-center my-[2rem]">
               <h2 className="text-[#D9D9D9] text-[50px] font-bold">
                 Welcome Back!
