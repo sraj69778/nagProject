@@ -12,12 +12,17 @@ const Login = () => {
       <div className="bg-[#181B1C] h-[100vh] flex">
         {/* Signup Section */}
         <div className="w-[60%]">
-          <Image
-            src={"/Project_Logo.svg"}
-            width={200}
-            height={50}
-            alt="Project Logo"
-          ></Image>
+        <div className="flex items-center px-[1rem]">
+            <Image
+              src={"/Project_Logo.svg"}
+              width={50}
+              height={100}
+              alt="Project Logo"
+            ></Image>
+            <p className="text-[#dbdbdb] text-[36px] font-bold mx-[0.5rem]">
+              DISCUZ
+            </p>
+          </div>
           <div className="w-[70%] m-auto">
             <div className="text-center flex flex-col items-center my-[1rem]">
               <h2 className="text-[#D9D9D9] text-[50px] font-bold">

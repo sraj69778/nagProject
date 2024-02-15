@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Login = () => {
   return (
@@ -7,14 +11,16 @@ const Login = () => {
       <div className="bg-[#181B1C] h-[100vh] flex">
         {/* Login Section */}
         <div className="w-[60%]">
-          <div className="flex items-center">
+          <div className="flex items-center px-[1rem]">
             <Image
               src={"/Project_Logo.svg"}
-              width={200}
+              width={50}
               height={100}
               alt="Project Logo"
             ></Image>
-            <p className="text-[#fff]">Hey this is the title of the Project</p>
+            <p className="text-[#dbdbdb] text-[36px] font-bold mx-[0.5rem]">
+              DISCUZ
+            </p>
           </div>
           <div className="w-[50%] m-auto">
             <div className="text-center my-[2rem]">
@@ -24,6 +30,44 @@ const Login = () => {
               <p className="text-[#D9D9D9]">
                 Login to elevate your B2B connections
               </p>
+            </div>
+
+            {/* Form Section */}
+            <div className="w-[65%] mx-auto">
+              <div>
+                <Label className="text-[#D9D9D9]" htmlFor="email">
+                  Email*
+                </Label>
+                <Input className="bg-[#D9D9D9] mt-[5px] rounded" type="email" />
+              </div>
+              <div className="my-[1rem]">
+                <Label className="text-[#D9D9D9]" htmlFor="email">
+                  Password*
+                </Label>
+                <Input
+                  className="bg-[#D9D9D9] mt-[5px] rounded"
+                  type="password"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="py-[1.5rem] hover:bg-blue-600 font-bold text-[#ffffff] bg-[#1A88E1] w-full my-[6%] rounded"
+              >
+                LOGIN IN
+              </Button>
+              <p className="text-[#D9D9D9] text-center my-[0.5rem]">
+                Forgot Password?
+              </p>
+              <div className="flex items-center justify-center">
+                <p className="text-[#D9D9D9]">
+                  Don't have an account?{" "}
+                  <Link href={"/signup"}>
+                    <span className="text-[#5cb4fd] ml-[5px] underline">
+                      Sign up
+                    </span>
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
