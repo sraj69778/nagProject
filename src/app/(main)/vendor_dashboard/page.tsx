@@ -7,9 +7,9 @@ const Dashboard = () => {
   return (
     <>
       <div className="w-[80%]">
-        <div className="m-[1rem] ml-0 px-[1.5rem] py-[1rem] h-[50vh] rounded-xl bg-[#fff]">
+        <div className="m-[1rem] ml-0 px-[2%] py-[1%] h-[50vh] rounded-xl bg-[#fff]">
           <div className="flex items-center justify-between mb-[0.3rem]">
-            <h2 className="text-[#717171] text-[30px] font-bold">Dashboard</h2>
+            <h2 className="text-[#717171] text-[28px] font-bold">Dashboard</h2>
             <Image
               className="cursor-pointer"
               src={"/dashboard-vendor/add.svg"}
@@ -22,7 +22,7 @@ const Dashboard = () => {
         </div>
         <div className="flex">
           <Messages />
-          <Requests />
+          <Requests />  
         </div>
       </div>
     </>
