@@ -42,7 +42,7 @@ var options = [
 const SideNav = () => {
   return (
     <>
-      <div className="bg-[#fff] w-[18%] h-[95.5vh] m-[1%] rounded-3xl mr-[1%] py-[1%]">
+      <div className="bg-[#fff] w-[18%] h-[96.5vh] m-[1%] rounded-3xl mr-[1%] py-[1%]">
         <div className="flex items-center justify-center">
           <img
             src={"/Project_Logo.svg"}
