@@ -13,7 +13,7 @@ const Dashboard = () => {
             <Image
               className="cursor-pointer"
               src={"/dashboard-vendor/expand.svg"}
-              width={35}
+              width={20}
               height={100}
               alt="Project Logo"
             ></Image>

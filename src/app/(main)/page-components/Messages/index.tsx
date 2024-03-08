@@ -10,7 +10,7 @@ const Messages = () => {
           <Image
               className="cursor-pointer"
               src={"/dashboard-vendor/expand.svg"}
-              width={30}
+              width={20}
               height={90}
               alt="Project Logo"
             ></Image>
