@@ -42,7 +42,7 @@ var options = [
 const SideNav = () => {
   return (
     <>
-      <div className="bg-[#fff] w-[18%] h-[95.5vh] m-[1%] rounded-3xl mr-[1%] py-[1%]">
+      <div className="bg-[#fff] w-[18%] h-[96.5vh] m-[1%] rounded-3xl mr-[1%] py-[1%]">
         <div className="flex items-center justify-center">
           <img
             src={"/Project_Logo.svg"}
@@ -57,7 +57,7 @@ const SideNav = () => {
         {/* Side Nav Buttons */}
         <div>
           {options.map((option)=>(
-             <div key = {option.name} className={` ${option.isSelected? 'bg-[#1A88E1] text-[#ffffff]':'text-[#676767]'}   shadow-lg cursor-pointer mx-[12%] my-[4%] p-[3%] rounded-2xl flex items-center`}>
+             <div key = {option.name} className={` ${option.isSelected? 'bg-[#1A88E1] text-[#ffffff]':'text-[#676767]'}   shadow-lg cursor-pointer mx-[8%] my-[4%] p-[3%] rounded-2xl flex items-center`}>
              <Image
                src={option.image}
                width={30}
