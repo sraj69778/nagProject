@@ -3,7 +3,7 @@ import Image from "next/image";
 const ContentTile = () => {
   return (
     <>
-      <div className="bg-[#3f3f3f] w-[48%] my-[1rem] p-[1rem] text-[#fff] rounded-2xl flex items-center cursor-pointer hover:bg-[#1A88E1] duration-500">
+      <div className="bg-[#3f3f3f] my-[0.8rem] p-[1rem] text-[#fff] rounded-2xl flex items-center cursor-pointer hover:bg-[#1A88E1] duration-500">
         <Image
           className="rounded-[100%]"
           src={"/display-picture/display.png"}
