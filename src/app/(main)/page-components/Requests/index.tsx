@@ -3,8 +3,22 @@ import ContentTile from "../content-tile";
 import Image from "next/image";
 
 const Requests = () => {
+  const requests =[ {
+    imgPath: '/display-picture/display.png',
+    title: 'ABC Company',
+    description: 'Description about the company and the project it is offering ...',
+    date: '12 March 2024',
+    width:'80%',
+  },
+  {
+    imgPath: '/display-picture/display.png',
+    title: 'ABC Company',
+    description: 'Description about the company and the project it is offering ...',
+    date: '12 March 2024',
+    width: '80%',
+  },
+];
   return (
-    <>
       <>
         <div className="m-[1rem] ml-0 mt-0 px-[1.5rem] py-[1rem] h-[47vh] rounded-xl w-[50%] bg-[#fff]">
           <div className="flex items-center justify-between mb-[0.3rem]">
@@ -18,13 +32,12 @@ const Requests = () => {
             ></Image>
           </div>
           <Separator className="bg-[#d7d7d7] mx-auto h-[0.2rem] text-center " />
-          <div>
-            <ContentTile />
-            <ContentTile />
-            <ContentTile />
+          <div className="flex flex-col flex-wrap w-[100%] h-[100%] overflow-hidden my-[2%] py-[1%]">
+              {requests.map((request)=>{
+                return <ContentTile content={request}/>
+              })}            
           </div>
-        </div>
-      </>
+          </div>
     </>
   );
 };
