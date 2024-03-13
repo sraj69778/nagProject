@@ -58,9 +58,10 @@ const Dashboard = () => {
                   })}              
               </div>
               <div className="h-[10%] flex items-center justify-center m-0">
-                <Button className="bg-red-400 ">Load More</Button>
-              </div>
-               
+                <Button className="flex justify-center items-center"><p className="font-bold text-gray-500">Load More</p>
+                <img src={'/dashboard-vendor/downarrow.svg'} className="w-4 h-4 ml-2"></img>
+                </Button>
+              </div>  
             </div>
           </div>
             
