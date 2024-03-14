@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import Logo from "@/components/logo";
 import Pitch from "@/components/pitch";
 
-const Login = () => { 
+const VirtualPitch = () => { 
   return (
     <>
       <div className="bg-[#181B1C] h-[100vh] flex">
@@ -34,4 +34,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default VirtualPitch;
