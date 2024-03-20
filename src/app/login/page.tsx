@@ -52,6 +52,10 @@ const Login = () => {
 
   if (isSuccess) {
     notify();
+    sessionStorage.setItem(
+      "userData",
+      JSON.stringify({ token: data.token, user: data.user })
+    );
     setTimeout(() => {
       router.push(`/${data?.user?.role.toLowerCase()}_dashboard`);
     }, 2000);

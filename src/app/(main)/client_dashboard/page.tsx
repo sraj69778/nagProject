@@ -1,41 +1,52 @@
+"use client";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import Messages from "../page-components/Messages";
 import Requests from "../page-components/Requests";
 import ContentTile from "../page-components/content-tile";
 import { Button } from "@/components/ui/button";
-Button
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
-  const contents =[ {
-    imgPath: '/display-picture/display.png',
-    title: 'ABC Company',
-    description: 'Description about the company and the project it is offering ...',
-    date: '12 March 2024',
-    width: '47%',
-  },
-  {
-    imgPath: '/display-picture/display.png',
-    title: 'ABC Company',
-    description: 'Description about the company and the project it is offering ...',
-    date: '12 March 2024',
-    width: '47%',
-  },
-  {
-    imgPath: '/display-picture/display.png',
-    title: 'ABC Company',
-    description: 'Description about the company and the project it is offering ...',
-    date: '12 March 2024',
-    width: '47%',
-  },
-  {
-    imgPath: '/display-picture/display.png',
-    title: 'ABC Company',
-    description: 'Description about the company and the project it is offering ...',
-    date: '12 March 2024',
-    width: '47%',
-  },
-];
+  const router = useRouter();
+  if (!sessionStorage.getItem("userData")) {
+    router.push("/login");
+  }
+
+  const contents = [
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+  ];
   return (
     <>
       <div className="w-[80%]">
@@ -52,19 +63,23 @@ const Dashboard = () => {
           </div>
           <Separator className="bg-[#d7d7d7] mx-auto h-[0.2rem] text-center " />
           <div className="flex flex-col h-[90%] w-[100%]">
-              <div className="flex flex-col flex-wrap w-[100%] h-[90%] m-0">
-                  {contents.map((content)=>{
-                    return <ContentTile content={content}/>
-                  })}              
-              </div>
-              <div className="h-[10%] flex items-center justify-center m-0">
-                <Button className="flex justify-center items-center"><p className="font-bold text-gray-500">Load More</p>
-                <img src={'/dashboard-vendor/downarrow.svg'} className="w-4 h-4 ml-2"></img>
-                </Button>
-              </div>  
+            <div className="flex flex-col flex-wrap w-[100%] h-[90%] m-0">
+              {contents.map((content) => {
+                return <ContentTile content={content} />;
+              })}
+            </div>
+            <div className="h-[10%] flex items-center justify-center m-0">
+              <Button className="flex justify-center items-center">
+                <p className="font-bold text-gray-500">Load More</p>
+                <img
+                  src={"/dashboard-vendor/downarrow.svg"}
+                  className="w-4 h-4 ml-2"
+                ></img>
+              </Button>
             </div>
           </div>
-            
+        </div>
+
         <div className="flex">
           <Messages />
           <Requests />
