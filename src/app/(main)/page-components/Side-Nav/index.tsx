@@ -16,7 +16,7 @@ const SideNav = () => {
       name: "Dashboard",
       image: "/dashboard-vendor/dashboard.svg",
       isSelected: pathname.includes("dashboard"),
-      url: `${userData.user.role.toLowerCase()}_dashboard`,
+      url: `${userData?.user?.role.toLowerCase()}_dashboard`,
     },
     {
       name: "Chats",
@@ -35,6 +35,11 @@ const SideNav = () => {
       image: "/dashboard-vendor/profile.svg",
       isSelected: pathname.includes("profile"),
       url: "/profile",
+    },
+    {
+      name: "Log Out",
+      image: "/dashboard-vendor/dashboard.svg",
+      url: `/login`,
     },
   ];
   return (
@@ -57,6 +62,9 @@ const SideNav = () => {
             <div
               onClick={() => {
                 router.push(option.url);
+                option.name == "Log Out"
+                  ? sessionStorage.removeItem("userData")
+                  : "";
               }}
               key={option.name}
               className={` ${
