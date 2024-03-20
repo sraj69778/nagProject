@@ -7,6 +7,8 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   Select,
@@ -18,6 +20,17 @@ import {
 } from "@/components/ui/select";
 
 const Login = () => {
+  const notify = () =>
+    toast.info("User Created Successfully!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   const { mutate, isError, isSuccess, isPending }: any = useMutation({
     mutationFn: (newUser) => {
       return axios
@@ -25,12 +38,12 @@ const Login = () => {
         .then((res) => res.data);
     },
   });
-  console.log("Is pending");
-  console.log(isPending);
-  console.log("Is success");
-  console.log(isSuccess);
-  console.log("Is error");
-  console.log(isError);
+  // console.log("Is pending");
+  // console.log(isPending);
+  // console.log("Is success");
+  // console.log(isSuccess);
+  // console.log("Is error");
+  // console.log(isError);
 
   return (
     <>
@@ -62,16 +75,17 @@ const Login = () => {
               <form
                 onSubmit={(event: any) => {
                   event.preventDefault();
-                  mutate({
-                    name: event.target.company_name.value,
-                    description: event.target.company_description.value,
-                    email: event.target.company_email.value,
-                    password: event.target.company_password.value,
-                    profileImageURL: "fdhbhdsfhds",
-                    role: event.target.role.value,
-                    location: event.target.company_location.value,
-                    contact: event.target.company_contact_number.value,
-                  });
+                  notify();
+                  // mutate({
+                  //   name: event.target.company_name.value,
+                  //   description: event.target.company_description.value,
+                  //   email: event.target.company_email.value,
+                  //   password: event.target.company_password.value,
+                  //   profileImageURL: "fdhbhdsfhds",
+                  //   role: event.target.role.value,
+                  //   location: event.target.company_location.value,
+                  //   contact: event.target.company_contact_number.value,
+                  // });
                   // console.log(event.target.company_name.value);
                   // console.log(event.target.company_description.value);
                   // console.log(event.target.company_location.value);
@@ -226,6 +240,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
