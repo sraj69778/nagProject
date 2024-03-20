@@ -1,6 +1,6 @@
 export const ContentTile = ({content}:{content:any}) => {
   return (
-      <div className={`bg-[#3f3f3f] m-2 p-3 w-${content.width} h-[25%] text-[#fff] rounded-2xl flex items-center cursor-pointer hover:bg-[#1A88E1] duration-500`}>
+      <div className={`bg-[#3f3f3f] m-2 p-3 w-[${content.width}] h-[80px] text-[#fff] rounded-2xl flex items-center cursor-pointer hover:bg-[#1A88E1] duration-500`}>
         <img
           className="rounded-[100%] w-[10%] h-[100%]"
           src={content.imgPath}
