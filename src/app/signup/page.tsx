@@ -5,17 +5,33 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import axios from "axios";
+
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 
 const Login = () => {
+  const { mutate, isError, isSuccess, isPending }: any = useMutation({
+    mutationFn: (newUser) => {
+      return axios
+        .post("http://localhost:3000/user/signup", newUser)
+        .then((res) => res.data);
+    },
+  });
+  console.log("Is pending");
+  console.log(isPending);
+  console.log("Is success");
+  console.log(isSuccess);
+  console.log("Is error");
+  console.log(isError);
+
   return (
     <>
       <div className="bg-[#181B1C] min-h-[100vh] flex">
@@ -46,13 +62,23 @@ const Login = () => {
               <form
                 onSubmit={(event: any) => {
                   event.preventDefault();
-                  console.log(event.target.company_name.value);
-                  console.log(event.target.company_description.value);
-                  console.log(event.target.company_location.value);
-                  console.log(event.target.role.value);
-                  console.log(event.target.company_contact_number.value);
-                  console.log(event.target.company_email.value);
-                  console.log(event.target.company_password.value);
+                  mutate({
+                    name: event.target.company_name.value,
+                    description: event.target.company_description.value,
+                    email: event.target.company_email.value,
+                    password: event.target.company_password.value,
+                    profileImageURL: "fdhbhdsfhds",
+                    role: event.target.role.value,
+                    location: event.target.company_location.value,
+                    contact: event.target.company_contact_number.value,
+                  });
+                  // console.log(event.target.company_name.value);
+                  // console.log(event.target.company_description.value);
+                  // console.log(event.target.company_location.value);
+                  // console.log(event.target.role.value);
+                  // console.log(event.target.company_contact_number.value);
+                  // console.log(event.target.company_email.value);
+                  // console.log(event.target.company_password.value);
                 }}
                 className="w-[100%]"
                 action=""
@@ -106,8 +132,8 @@ const Login = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup className="text-black bg-[#D9D9D9]">
-                        <SelectItem value="client">Client</SelectItem>
-                        <SelectItem value="vendor">Vendor</SelectItem>
+                        <SelectItem value="Client">Client</SelectItem>
+                        <SelectItem value="Vendor">Vendor</SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
