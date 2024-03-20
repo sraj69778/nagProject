@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const Login = () => {
+const SignUp = () => {
   const router = useRouter();
   const notify = () =>
     toast.info("User Created Successfully!", {
@@ -268,4 +268,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
