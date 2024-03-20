@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
@@ -20,8 +21,10 @@ import {
 } from "@/components/ui/select";
 
 const Login = () => {
+  const router = useRouter();
   const notify = () =>
     toast.info("User Created Successfully!", {
+      toastId: "success1",
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: true,
@@ -31,6 +34,20 @@ const Login = () => {
       progress: undefined,
       theme: "colored",
     });
+
+  const error = () => {
+    toast.error("Something went wrong!", {
+      toastId: "error1",
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   const { mutate, isError, isSuccess, isPending }: any = useMutation({
     mutationFn: (newUser) => {
       return axios
@@ -41,9 +58,15 @@ const Login = () => {
   // console.log("Is pending");
   // console.log(isPending);
   // console.log("Is success");
-  // console.log(isSuccess);
-  // console.log("Is error");
-  // console.log(isError);
+  // console.log(isSuccess ? notify() : "");
+  if (isSuccess) {
+    notify();
+    setTimeout(() => {
+      router.push("/login");
+    }, 2000);
+  } else if (isError) {
+    error();
+  }
 
   return (
     <>
@@ -75,17 +98,17 @@ const Login = () => {
               <form
                 onSubmit={(event: any) => {
                   event.preventDefault();
-                  notify();
-                  // mutate({
-                  //   name: event.target.company_name.value,
-                  //   description: event.target.company_description.value,
-                  //   email: event.target.company_email.value,
-                  //   password: event.target.company_password.value,
-                  //   profileImageURL: "fdhbhdsfhds",
-                  //   role: event.target.role.value,
-                  //   location: event.target.company_location.value,
-                  //   contact: event.target.company_contact_number.value,
-                  // });
+
+                  mutate({
+                    name: event.target.company_name.value,
+                    description: event.target.company_description.value,
+                    email: event.target.company_email.value,
+                    password: event.target.company_password.value,
+                    profileImageURL: "fdhbhdsfhds",
+                    role: event.target.role.value,
+                    location: event.target.company_location.value,
+                    contact: event.target.company_contact_number.value,
+                  });
                   // console.log(event.target.company_name.value);
                   // console.log(event.target.company_description.value);
                   // console.log(event.target.company_location.value);
