@@ -5,25 +5,35 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { useMutation } from "@tanstack/react-query";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Logo from "@/components/logo";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectGroup,
+} from "@/components/ui/select";
+import axios from "axios";
 
 
-const Login = () => {
+const SignUp = () => {
+  const { mutate, isError, isSuccess, isPending }: any = useMutation({
+    mutationFn: (newUser) => {
+      return axios
+        .post("http://localhost:3000/user/signup", newUser)
+        .then((res) => res.data);
+    },
+  });
   return (
     <>
       <div className="bg-[#181B1C] min-h-[100vh] flex">
         {/* Signup Section */}
         <div className="w-[60%]">
-        <div className="flex items-center px-[1rem]">
-            <Image
-              src={"/Project_Logo.svg"}
-              width={50}
-              height={100}
-              alt="Project Logo"
-            ></Image>
-            <p className="text-[#dbdbdb] text-[36px] font-bold mx-[0.5rem]">
-              DISCUZ
-            </p>
-          </div>
+        <Logo />
           <div className="w-[70%] m-auto">
             <div className="text-center flex flex-col items-center my-[1rem]">
               <h2 className="text-[#D9D9D9] text-[50px] font-bold">

@@ -11,6 +11,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import "react-toastify/dist/ReactToastify.css";
+import Logo from "@/components/logo";
 
 const Login = () => {
   const router = useRouter();
@@ -49,7 +50,7 @@ const Login = () => {
           .then((res) => res.data);
       },
     });
-
+    console.log(data);
   if (isSuccess) {
     notify();
     sessionStorage.setItem(
