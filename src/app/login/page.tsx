@@ -53,7 +53,6 @@ const Login = () => {
   if (isSuccess) {
     notify();
     setTimeout(() => {
-      console.log(data?.user?.role);
       router.push(`/${data?.user?.role.toLowerCase()}_dashboard`);
     }, 2000);
   } else if (isError) {
