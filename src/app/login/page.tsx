@@ -8,17 +8,57 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const { mutate, isError, isSuccess, isPending, data }: any = useMutation({
-    mutationFn: (user) => {
-      return axios
-        .post("http://localhost:3000/user/login", user)
-        .then((res) => res.data);
-    },
-  });
+  const router = useRouter();
+  const notify = () =>
+    toast.success("User Signed In!", {
+      toastId: "success1",
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
-  // console.log(data);
+  const errorToast = (errorMessage: any) => {
+    toast.error(errorMessage, {
+      toastId: "error1",
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const { mutate, isError, isSuccess, isPending, data, error }: any =
+    useMutation({
+      mutationFn: (user) => {
+        return axios
+          .post("http://localhost:3000/user/login", user)
+          .then((res) => res.data);
+      },
+    });
+
+  if (isSuccess) {
+    notify();
+    setTimeout(() => {
+      console.log(data?.user?.role);
+      router.push(`/${data?.user?.role.toLowerCase()}_dashboard`);
+    }, 2000);
+  } else if (isError) {
+    errorToast(error?.response?.data?.message);
+  }
 
   return (
     <>
@@ -121,6 +161,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
