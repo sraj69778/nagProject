@@ -18,9 +18,36 @@ import {
   SelectGroup,
 } from "@/components/ui/select";
 import axios from "axios";
-
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
+  const router = useRouter();
+  const notify = () =>
+    toast.info("User Created Successfully!", {
+      toastId: "success1",
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const error = () => {
+    toast.error("Something went wrong!", {
+      toastId: "error1",
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   const { mutate, isError, isSuccess, isPending }: any = useMutation({
     mutationFn: (newUser) => {
       return axios
@@ -28,12 +55,25 @@ const SignUp = () => {
         .then((res) => res.data);
     },
   });
+  // console.log("Is pending");
+  // console.log(isPending);
+  // console.log("Is success");
+  // console.log(isSuccess ? notify() : "");
+  if (isSuccess) {
+    notify();
+    setTimeout(() => {
+      router.push("/login");
+    }, 2000);
+  } else if (isError) {
+    error();
+  }
+
   return (
     <>
       <div className="bg-[#181B1C] min-h-[100vh] flex">
         {/* Signup Section */}
         <div className="w-[60%]">
-        <Logo />
+          <Logo />
           <div className="w-[70%] m-auto">
             <div className="text-center flex flex-col items-center my-[1rem]">
               <h2 className="text-[#D9D9D9] text-[50px] font-bold">
@@ -217,5 +257,4 @@ const SignUp = () => {
     </>
   );
 };
-
 export default SignUp;
