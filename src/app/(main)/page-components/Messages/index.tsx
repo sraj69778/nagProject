@@ -8,14 +8,14 @@ const Messages = () => {
     title: 'ABC Company',
     description: 'Description about the company and the project it is offering ...',
     date: '12 March 2024',
-    width:'80%',
+    width:'95%',
   },
   {
     imgPath: '/display-picture/display.png',
     title: 'ABC Company',
     description: 'Description about the company and the project it is offering ...',
     date: '12 March 2024',
-    width: '80%',
+    width: '95%',
   },
 ];
   return (
