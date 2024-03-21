@@ -47,9 +47,11 @@
 //   );
 // };
 
-// export default Messages;
 "use client";
-import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+
+import { useState, useEffect } from "react";
 import AuthPage from "./AuthPage";
 import ChatsPage from "./ChatsPage";
 import "./chats.css";
@@ -61,10 +63,32 @@ const Chats = () => {
   if (!sessionStorage.getItem("userData")) {
     router.push("/login");
   }
+
+  let loggedInUser: any = sessionStorage.getItem("userData");
+  loggedInUser = JSON.parse(loggedInUser);
+
   const user = {
-    username: "dency",
-    secret: "dency",
+    username: loggedInUser.user.email,
+    secret: loggedInUser.user.email,
   };
+
+  const { mutate, isError, isSuccess }: any = useMutation({
+    mutationFn: (newChatUser) => {
+      return axios
+        .post("http://localhost:3000/authenticate", newChatUser)
+        .then((resposne) => console.log(resposne));
+    },
+  });
+
+  useEffect(() => {
+    {
+      mutate({
+        username: loggedInUser.email,
+        secret: loggedInUser.email,
+      });
+    }
+  }, []);
+
   return (
     <>
       <div className="chats">
@@ -72,13 +96,6 @@ const Chats = () => {
       </div>
     </>
   );
-
-  // if (!user) {
-  //   return <AuthPage onAuth={(user:any) => setUser(user)} />;
-  // }
-  //  else {
-  //   return <ChatsPage user={user} />;
-  // }
 };
 
 export default Chats;

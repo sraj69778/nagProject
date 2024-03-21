@@ -50,7 +50,7 @@ const Login = () => {
           .then((res) => res.data);
       },
     });
-    console.log(data);
+
   if (isSuccess) {
     notify();
     sessionStorage.setItem(

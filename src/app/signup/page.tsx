@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useMutation } from "@tanstack/react-query";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Logo from "@/components/logo";
 import {
   Select,
@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/select";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const SignUp = () => {
   const router = useRouter();
@@ -48,11 +49,23 @@ const SignUp = () => {
       theme: "colored",
     });
   };
-  const { mutate, isError, isSuccess, isPending }: any = useMutation({
+  const { mutate, isError, isSuccess, isPending, data }: any = useMutation({
     mutationFn: (newUser) => {
       return axios
         .post("http://localhost:3000/user/signup", newUser)
         .then((res) => res.data);
+    },
+  });
+
+  const {
+    mutate: createChatUser,
+    isError: chatUserError,
+    isSuccess: chatUserSuccess,
+  }: any = useMutation({
+    mutationFn: (newChatUser) => {
+      return axios
+        .post("http://localhost:3000/authenticate", newChatUser)
+        .then((resposne) => console.log(resposne));
     },
   });
   // console.log("Is pending");
@@ -61,12 +74,20 @@ const SignUp = () => {
   // console.log(isSuccess ? notify() : "");
   if (isSuccess) {
     notify();
-    setTimeout(() => {
-      router.push("/login");
-    }, 2000);
+    if (chatUserSuccess) {
+      setTimeout(() => {
+        router.push("/login");
+      }, 2000);
+    } else {
+      console.log(chatUserError);
+    }
   } else if (isError) {
     error();
   }
+
+  useEffect(() => {
+    createChatUser({ username: data?.user?.email, secret: data?.user?.email });
+  }, [isSuccess === true]);
 
   return (
     <>
