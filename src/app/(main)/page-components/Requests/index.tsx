@@ -8,19 +8,19 @@ const Requests = () => {
     title: 'ABC Company',
     description: 'Description about the company and the project it is offering ...',
     date: '12 March 2024',
-    width:'95%',
+    
   },
   {
     imgPath: '/display-picture/display.png',
     title: 'ABC Company',
     description: 'Description about the company and the project it is offering ...',
     date: '12 March 2024',
-    width: '95%',
+    
   },
 ];
   return (
       <>
-        <div className="m-[1rem] ml-0 mt-0 px-[1.5rem] py-[1rem] h-[47vh] rounded-xl w-[50%] bg-[#fff]">
+        <div className="m-[1rem] ml-0 mt-0 px-[1.5rem] py-[1rem] h-[47vh] rounded-xl w-[100%] bg-[#fff]">
           <div className="flex items-center justify-between mb-[0.3rem]">
             <h2 className="text-[#717171] text-[28px] font-bold">Requests</h2>
             <Image

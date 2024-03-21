@@ -17,7 +17,7 @@ const Requests = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
+      budget: '200k-300k',
     },
     {
       imgPath: "/display-picture/display.png",
@@ -25,7 +25,6 @@ const Requests = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
     },
     {
       imgPath: "/display-picture/display.png",
@@ -33,7 +32,6 @@ const Requests = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
     },
     {
       imgPath: "/display-picture/display.png",
@@ -41,56 +39,54 @@ const Requests = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
     },
     {
-      imgPath: "/display-picture/display.png",
-      title: "ABC Company",
-      description:
-        "Description about the company and the project it is offering ...",
-      date: "12 March 2024",
-      width: "47%",
-    },
-    {
-      imgPath: "/display-picture/display.png",
-      title: "ABC Company",
-      description:
-        "Description about the company and the project it is offering ...",
-      date: "12 March 2024",
-      width: "47%",
-    },
-    {
-      imgPath: "/display-picture/display.png",
-      title: "ABC Company",
-      description:
-        "Description about the company and the project it is offering ...",
-      date: "12 March 2024",
-      width: "47%",
-    },
-    {
-      imgPath: "/display-picture/display.png",
-      title: "ABC Company",
-      description:
-        "Description about the company and the project it is offering ...",
-      date: "12 March 2024",
-      width: "47%",
-    },
-    {
-      imgPath: "/display-picture/display.png",
-      title: "ABC Company",
-      description:
-        "Description about the company and the project it is offering ...",
-      date: "12 March 2024",
-      width: "47%",
-    },
-    {
-      imgPath: "/display-picture/display.png",
-      title: "ABC Company",
-      description:
-        "Description about the company and the project it is offering ...",
-      date: "12 March 2024",
-      width: "47%",
-    },
+        imgPath: "/display-picture/display.png",
+        title: "ABC Company",
+        description:
+          "Description about the company and the project it is offering ...",
+        date: "12 March 2024",
+      },
+      {
+        imgPath: "/display-picture/display.png",
+        title: "ABC Company",
+        description:
+          "Description about the company and the project it is offering ...",
+        date: "12 March 2024",
+        
+      },
+      {
+        imgPath: "/display-picture/display.png",
+        title: "ABC Company",
+        description:
+          "Description about the company and the project it is offering ...",
+        date: "12 March 2024",
+        
+      },
+      {
+        imgPath: "/display-picture/display.png",
+        title: "ABC Company",
+        description:
+          "Description about the company and the project it is offering ...",
+        date: "12 March 2024",
+        
+      },
+      {
+        imgPath: "/display-picture/display.png",
+        title: "ABC Company",
+        description:
+          "Description about the company and the project it is offering ...",
+        date: "12 March 2024",
+        
+      },
+      {
+        imgPath: "/display-picture/display.png",
+        title: "ABC Company",
+        description:
+          "Description about the company and the project it is offering ...",
+        date: "12 March 2024",
+        
+      },
   ];
   return (
     <>
