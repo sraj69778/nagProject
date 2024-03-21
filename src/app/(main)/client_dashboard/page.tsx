@@ -20,7 +20,7 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
+      
     },
     {
       imgPath: "/display-picture/display.png",
@@ -28,7 +28,7 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
+      
     },
     {
       imgPath: "/display-picture/display.png",
@@ -36,7 +36,7 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
+      
     },
     {
       imgPath: "/display-picture/display.png",
@@ -44,7 +44,7 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      width: "47%",
+      
     },
   ];
   return (
@@ -81,7 +81,7 @@ const Dashboard = () => {
         </div>
 
         <div className="flex">
-          <Messages />
+          {/* <Messages /> */}
           <Requests />
         </div>
       </div>
