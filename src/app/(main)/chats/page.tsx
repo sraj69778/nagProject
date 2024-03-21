@@ -18,7 +18,7 @@
 //   ]
 //   return (
 //     <>
-    
+
 //     <div className="bg-[#fff] w-[58%] h-[96.5vh] my-[1%] rounded-3xl py-[1%]">
 //       <div className="flex items-center justify-start mx-[4%] h-[6%]">
 //             <h1 className="text-[#717171] lg:text-[20px] md:text-[16px] font-medium">
@@ -37,7 +37,7 @@
 //         </div>
 //           {Chats.map((chat)=>{
 //             return <div>
-              
+
 //             </div>
 //           })}
 //       </div>
@@ -52,10 +52,16 @@
 import { useState } from "react";
 import AuthPage from "./AuthPage";
 import ChatsPage from "./ChatsPage";
-import './chats.css';
+import "./chats.css";
 import React from "react";
+import { useRouter } from "next/navigation";
+
 const Chats = () => {
-  const user ={
+  const router = useRouter();
+  if (!sessionStorage.getItem("userData")) {
+    router.push("/login");
+  }
+  const user = {
     username: "dency",
     secret: "dency",
   };
@@ -64,17 +70,15 @@ const Chats = () => {
       <div className="chats">
         <ChatsPage user={user} />
       </div>
-      
     </>
-    );
-  
-  
+  );
+
   // if (!user) {
   //   return <AuthPage onAuth={(user:any) => setUser(user)} />;
   // }
   //  else {
   //   return <ChatsPage user={user} />;
   // }
-}
+};
 
 export default Chats;

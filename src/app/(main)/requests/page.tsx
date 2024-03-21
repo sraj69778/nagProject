@@ -3,10 +3,13 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import ContentTile from "../page-components/content-tile";
 import { Button } from "@/components/ui/button";
-
+import { useRouter } from "next/navigation";
 
 const Requests = () => {
-
+  const router = useRouter();
+  if (!sessionStorage.getItem("userData")) {
+    router.push("/login");
+  }
   const requests = [
     {
       imgPath: "/display-picture/display.png",
