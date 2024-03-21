@@ -3,10 +3,13 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import ContentTile from "../page-components/content-tile";
 import { Button } from "@/components/ui/button";
-
+import { useRouter } from "next/navigation";
 
 const Requests = () => {
-
+  const router = useRouter();
+  if (!sessionStorage.getItem("userData")) {
+    router.push("/login");
+  }
   const requests = [
     {
       imgPath: "/display-picture/display.png",
@@ -41,53 +44,53 @@ const Requests = () => {
       width: "47%",
     },
     {
-        imgPath: "/display-picture/display.png",
-        title: "ABC Company",
-        description:
-          "Description about the company and the project it is offering ...",
-        date: "12 March 2024",
-        width: "47%",
-      },
-      {
-        imgPath: "/display-picture/display.png",
-        title: "ABC Company",
-        description:
-          "Description about the company and the project it is offering ...",
-        date: "12 March 2024",
-        width: "47%",
-      },
-      {
-        imgPath: "/display-picture/display.png",
-        title: "ABC Company",
-        description:
-          "Description about the company and the project it is offering ...",
-        date: "12 March 2024",
-        width: "47%",
-      },
-      {
-        imgPath: "/display-picture/display.png",
-        title: "ABC Company",
-        description:
-          "Description about the company and the project it is offering ...",
-        date: "12 March 2024",
-        width: "47%",
-      },
-      {
-        imgPath: "/display-picture/display.png",
-        title: "ABC Company",
-        description:
-          "Description about the company and the project it is offering ...",
-        date: "12 March 2024",
-        width: "47%",
-      },
-      {
-        imgPath: "/display-picture/display.png",
-        title: "ABC Company",
-        description:
-          "Description about the company and the project it is offering ...",
-        date: "12 March 2024",
-        width: "47%",
-      },
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      width: "47%",
+    },
   ];
   return (
     <>

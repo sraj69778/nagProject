@@ -1,15 +1,21 @@
+"use client";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import ContentTile from "../page-components/content-tile";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const Profile = () => {
+  const router = useRouter();
+  if (!sessionStorage.getItem("userData")) {
+    router.push("/login");
+  }
   const user_info = {
-    image: '/display-picture/display.png',
-    name: 'Ayush Kamboj',
-    sector: 'Manufacturing',
-    location: 'Pune, India',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin a dui in iaculis. Pellentesque quis enim sapien. In vestibulum libero dui, eget elementum diam efficitur vitae. Ut facilisis accumsan elementum. Proin sagittis tincidunt lorem non pretium. Morbi efficitur pellentesque lacus, sed scelerisque libero porttitor eget. In hac habitasse platea dictumst',
+    image: "/display-picture/display.png",
+    name: "Ayush Kamboj",
+    sector: "Manufacturing",
+    location: "Pune, India",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin a dui in iaculis. Pellentesque quis enim sapien. In vestibulum libero dui, eget elementum diam efficitur vitae. Ut facilisis accumsan elementum. Proin sagittis tincidunt lorem non pretium. Morbi efficitur pellentesque lacus, sed scelerisque libero porttitor eget. In hac habitasse platea dictumst",
   };
 
   return (
