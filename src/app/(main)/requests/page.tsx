@@ -3,14 +3,9 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import ContentTile from "../page-components/content-tile";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 
 
-const Dashboard = () => {
-  const router = useRouter();
-  if (!sessionStorage.getItem("userData")) {
-    router.push("/login");
-  }
+const Requests = () => {
 
   const requests = [
     {
@@ -131,4 +126,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Requests;
