@@ -16,7 +16,7 @@ const Requirement: React.FC = () => {
 
       {/* Form Section */}
       <div className="w-[65%] mx-auto my-[3%]">
-        <div className="flex flex-row mt-[4%]">
+        {/* <div className="flex flex-row mt-[4%]">
           <div className="mr-auto w-[45%]">
             <Label className="text-[#D9D9D9]" htmlFor="company">
               Company
@@ -37,8 +37,8 @@ const Requirement: React.FC = () => {
               type="text"
             />
           </div>
-        </div>
-        <div className="flex flex-row mt-[4%]">
+        </div> */}
+        {/* <div className="flex flex-row mt-[4%]">
           <div className="mr-auto w-[45%]">
             <Label className="text-[#D9D9D9]" htmlFor="price">
               Sector
@@ -59,7 +59,7 @@ const Requirement: React.FC = () => {
               type="text"
             />
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col mx-auto mt-[6%]">
           <Label className="text-[#D9D9D9]" htmlFor="requirement">
             Required service/product
@@ -77,24 +77,20 @@ const Requirement: React.FC = () => {
             rows={3}
           ></textarea>
         </div>
-        <div className="flex flex-col mt-[4%] w-[50%]">
+        <div className="flex flex-col mt-[4%] w-[100%]">
           <Label className="text-[#D9D9D9]">Budget</Label>
           <div className="flex flex-row items-center">
             <div className="mr-auto w-[40%] mt-2 flex flex-col">
-              <Label className="text-[#D9D9D9] text-[10px]" htmlFor="minPrice">
-                Min.
-              </Label>
               <Input
+                placeholder=" Min."
                 id="minPrice"
                 className="bg-[#D9D9D9] mt-[5px] rounded"
                 type="number"
               />
             </div>
             <div className="w-[40%] flex flex-col">
-              <Label className="text-[#D9D9D9] text-[10px]" htmlFor="maxPrice">
-                Max.
-              </Label>
               <Input
+                placeholder=" Max."
                 id="maxPrice"
                 className="bg-[#D9D9D9] mt-[5px] rounded"
                 type="number"
@@ -102,7 +98,7 @@ const Requirement: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col mx-auto mt-[8%]">
+        <div className="flex flex-col mx-auto mt-[1rem]">
           <Button className="my-[1rem] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Submit
           </Button>
