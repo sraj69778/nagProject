@@ -76,7 +76,11 @@ const Dashboard = () => {
             <div className="flex flex-col h-[90%] w-[100%]">
               <div className="flex flex-col flex-wrap w-[100%] h-[90%] m-0">
                 {data?.data?.response?.requirements.map((content: any) => {
-                  return <ContentTile content={content} />;
+                  if (content?.isAccepted === false) {
+                    return <></>;
+                  } else {
+                    return <ContentTile content={content} />;
+                  }
                 })}
               </div>
               <div className="h-[10%] flex items-center justify-center m-0">

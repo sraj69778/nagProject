@@ -49,12 +49,22 @@ export const ContentTile = ({ content }: { content: any }) => {
             <p className="">{content.product_desc}</p>
             <p>{content.date}</p>
             <div>
-              <button
-                className="mt-4 bg-blue-500 text-white px-4  m-2 py-2 rounded"
-                onClick={() => router.push("/meeting_page")}
-              >
-                Start Meeting
-              </button>
+              {content?.isAccepted ? (
+                <button
+                  className="mt-4 bg-blue-500 text-white px-4  m-2 py-2 rounded"
+                  onClick={() => router.push("/meeting_page")}
+                >
+                  Start Meeting
+                </button>
+              ) : (
+                <button
+                  className="mt-4 bg-blue-500 text-white px-4  m-2 py-2 rounded"
+                  // onClick={() => }
+                >
+                  Accept request
+                </button>
+              )}
+
               <button
                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
                 onClick={closeModal}

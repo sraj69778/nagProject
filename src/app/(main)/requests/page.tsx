@@ -119,7 +119,12 @@ const Requests = () => {
             <div className="flex flex-col h-[90%] w-[100%]">
               <div className="flex flex-col flex-wrap w-[100%] h-[90%] m-0">
                 {data?.data?.response?.requirements.map((request: any) => {
-                  return <ContentTile content={request} />;
+                  console.log();
+                  if (request.isAccepted) {
+                    return <></>;
+                  } else {
+                    return <ContentTile content={request} />;
+                  }
                 })}
               </div>
               <div className="h-[10%] flex items-center justify-center m-0">

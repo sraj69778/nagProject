@@ -76,6 +76,7 @@ const Requirement: React.FC = () => {
                 product_desc: event.target.description.value,
                 budget_min: event.target.min_budget.value,
                 budget_max: event.target.max_budget.value,
+                isAccepted: false,
               });
 
               // console.log(user.user.email);
@@ -131,14 +132,14 @@ const Requirement: React.FC = () => {
               <Button className="my-[1rem] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Submit
               </Button>
-              <Button
-                onClick={() => router.push("/client_dashboard")}
-                className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Back
-              </Button>
             </div>
           </form>
+          <Button
+            onClick={() => router.push("/client_dashboard")}
+            className="w-[100%] bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Back
+          </Button>
         </div>
       </div>
       <ToastContainer />
