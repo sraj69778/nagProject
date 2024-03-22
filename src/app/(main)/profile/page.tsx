@@ -4,18 +4,32 @@ import { Separator } from "@/components/ui/separator";
 import ContentTile from "../page-components/content-tile";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const Profile = () => {
   const router = useRouter();
   if (!sessionStorage.getItem("userData")) {
     router.push("/login");
   }
+
+  // Fetching data from session storage
+  let userData: any = sessionStorage.getItem("userData");
+  userData = JSON.parse(userData);
+  const { email, role } = userData.user;
+
+  // Get Requst to get the ORG data from the server
+  const { isPending, error, data, isFetching } = useQuery({
+    queryKey: ["first-data"],
+    queryFn: () =>
+      axios
+        .get(`http://localhost:3000/user/${email}/${role}`)
+        .then((res) => res.data),
+  });
+
   const user_info = {
     image: "/display-picture/display.png",
-    name: "Ayush Kamboj",
     sector: "Manufacturing",
-    location: "Pune, India",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin a dui in iaculis. Pellentesque quis enim sapien. In vestibulum libero dui, eget elementum diam efficitur vitae. Ut facilisis accumsan elementum. Proin sagittis tincidunt lorem non pretium. Morbi efficitur pellentesque lacus, sed scelerisque libero porttitor eget. In hac habitasse platea dictumst",
   };
 
   return (
@@ -37,14 +51,14 @@ const Profile = () => {
               />
             </div>
             <div className="flex flex-col mx-8 justify-around h-[50%]">
-              <div className="font-bold text-[24px]">{user_info.name}</div>
+              <div className="font-bold text-[24px]">{data?.user?.name}</div>
               <div className="text-[14px]">{user_info.sector}</div>
-              <div className="text-[14px]">{user_info.location}</div>
+              <div className="text-[14px]">{data?.user?.location}</div>
             </div>
           </div>
           <div className="mx-8">
             Company description
-            <div>{user_info.desc}</div>
+            <div>{data?.user?.description}</div>
           </div>
         </div>
       </div>
