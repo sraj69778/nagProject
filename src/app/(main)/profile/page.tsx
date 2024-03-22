@@ -35,25 +35,41 @@ const Profile = () => {
             <h2 className="text-[#717171] text-[28px] font-bold">Profile</h2>
           </div>
           <Separator className="bg-[#d7d7d7] mx-auto h-[0.2rem] text-center " />
-          <div className="flex flex-row h-[30%] mt-8 items-center">
-            <div className="rounded-full mx-4 h-[80%] w-[15%] relative">
-              <Image
-                src={data?.user?.profileImageURL}
-                alt="User Image"
-                fill={true}
-                objectFit="fill"
-                className="rounded-full"
-              />
+          <div className="bg-[#3f3f3f] text-[#fff] flex flex-col h-[50%] w-[100%] p-8 mt-8 rounded-xl">
+            <div className="flex flex-row h-[30%]   mt-4 items-center">
+              <div className="rounded-full mx-4 h-[80%] w-[7%] relative">
+                <Image
+                  src={data?.user?.profileImageURL}
+                  alt="User Image"
+                  fill={true}
+                  objectFit="fill"
+                  className="rounded-full"
+                />
+              </div>
+              <div className="flex flex-col mx-8 justify-around h-[100%]">
+                <div className="font-bold text-[24px]">{data?.user?.name}</div>
+                <div className="flex flex-col flex-wrap justify-between  h-[50%]">
+                  <div className="text-[14px] mr-4">
+                    <b>Sector: </b> {data?.user?.sector}
+                  </div>
+                  <div className="text-[14px] mr-4">
+                    <b>Location: </b> {data?.user?.location}
+                  </div>
+                  <div className="text-[14px] mx-4">
+                    <b>Email: </b> {data?.user?.email}
+                  </div>
+                  <div className="text-[14px] mx-4">
+                    <b>Phn No.: </b>
+                    {data?.user?.contact}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col mx-8 justify-around h-[50%]">
-              <div className="font-bold text-[24px]">{data?.user?.name}</div>
-              <div className="text-[14px]">{data?.user?.sector}</div>
-              <div className="text-[14px]">{data?.user?.location}</div>
+            <Separator className="bg-[#d7d7d7] mx-auto h-[0.1rem] mt-4 text-center " />
+            <div className="m-8">
+              <p className="font-medium text-[20px]">Company Description</p>
+              <p className="mt-2">{data?.user?.description}</p>
             </div>
-          </div>
-          <div className="mx-8">
-            Company description
-            <div>{data?.user?.description}</div>
           </div>
         </div>
       </div>
