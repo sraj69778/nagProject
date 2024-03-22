@@ -52,13 +52,13 @@ const Dashboard = () => {
         <div className="m-[1rem] ml-0 px-[2%] py-[1%] h-[50vh] rounded-xl bg-[#fff]">
           <div className="flex items-center justify-between mb-[0.3rem]">
             <h2 className="text-[#717171] text-[28px] font-bold">Dashboard</h2>
-            <Image
+            {/* <Image
               className="cursor-pointer"
               src={"/dashboard-vendor/add.svg"}
               width={35}
               height={100}
               alt="Project Logo"
-            ></Image>
+            ></Image> */}
           </div>
           <Separator className="bg-[#d7d7d7] mx-auto h-[0.2rem] text-center " />
           <div className="flex flex-col h-[90%] w-[100%]">

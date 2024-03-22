@@ -1,8 +1,11 @@
+"use client";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const Requirement: React.FC = () => {
+  const router = useRouter();
   return (
     <div className="w-[80%] m-auto flex mb-4 flex-col h-full items-center">
       <div className="text-center flex justify-center">
@@ -100,8 +103,14 @@ const Requirement: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col mx-auto mt-[8%]">
-          <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Button className="my-[1rem] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Submit
+          </Button>
+          <Button
+            onClick={() => router.push("/client_dashboard")}
+            className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Back
           </Button>
         </div>
       </div>

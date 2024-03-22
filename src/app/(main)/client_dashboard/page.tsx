@@ -20,7 +20,6 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      
     },
     {
       imgPath: "/display-picture/display.png",
@@ -28,7 +27,6 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      
     },
     {
       imgPath: "/display-picture/display.png",
@@ -36,7 +34,6 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      
     },
     {
       imgPath: "/display-picture/display.png",
@@ -44,7 +41,6 @@ const Dashboard = () => {
       description:
         "Description about the company and the project it is offering ...",
       date: "12 March 2024",
-      
     },
   ];
   return (
@@ -54,9 +50,10 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-[0.3rem]">
             <h2 className="text-[#717171] text-[28px] font-bold">Dashboard</h2>
             <Image
+              onClick={() => router.push("/post_requirement")}
               className="cursor-pointer"
-              src={"/dashboard-vendor/expand.svg"}
-              width={20}
+              src={"/dashboard-vendor/add.svg"}
+              width={35}
               height={100}
               alt="Project Logo"
             ></Image>
