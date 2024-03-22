@@ -50,7 +50,7 @@ const Profile = () => {
                 <div className="font-bold text-[24px]">{data?.user?.name}</div>
                 <div className="flex flex-col flex-wrap justify-between  h-[50%]">
                   <div className="text-[14px] mr-4">
-                    <b>Sector: </b> {data?.user?.sector.toUpperCase()}
+                    <b>Sector: </b> {data?.user?.sector?.toUpperCase()}
                   </div>
                   <div className="text-[14px] mr-4">
                     <b>Location: </b> {data?.user?.location}
