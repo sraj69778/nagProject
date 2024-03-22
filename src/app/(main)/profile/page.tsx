@@ -27,11 +27,6 @@ const Profile = () => {
         .then((res) => res.data),
   });
 
-  const user_info = {
-    image: "/display-picture/display.png",
-    sector: "Manufacturing",
-  };
-
   return (
     <>
       <div className="w-[80%]">
@@ -43,7 +38,7 @@ const Profile = () => {
           <div className="flex flex-row h-[30%] mt-8 items-center">
             <div className="rounded-full mx-4 h-[80%] w-[15%] relative">
               <Image
-                src={user_info.image}
+                src={data?.user?.profileImageURL}
                 alt="User Image"
                 fill={true}
                 objectFit="fill"
@@ -52,7 +47,7 @@ const Profile = () => {
             </div>
             <div className="flex flex-col mx-8 justify-around h-[50%]">
               <div className="font-bold text-[24px]">{data?.user?.name}</div>
-              <div className="text-[14px]">{user_info.sector}</div>
+              <div className="text-[14px]">{data?.user?.sector}</div>
               <div className="text-[14px]">{data?.user?.location}</div>
             </div>
           </div>

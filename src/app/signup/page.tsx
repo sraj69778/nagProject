@@ -115,10 +115,10 @@ const SignUp = () => {
                     description: event.target.company_description.value,
                     email: event.target.company_email.value,
                     password: event.target.company_password.value,
-                    profileImageURL: "fdhbhdsfhds",
                     role: event.target.role.value,
                     location: event.target.company_location.value,
                     contact: event.target.company_contact_number.value,
+                    sector: event.target.sector.value,
                   });
                   // console.log(event.target.company_name.value);
                   // console.log(event.target.company_description.value);
@@ -156,6 +156,32 @@ const SignUp = () => {
                     className="text-black bg-[#D9D9D9] rounded mb-[6%] w-full"
                     required
                   />
+                  <Label
+                    htmlFor="name"
+                    className="text-[#D9D9D9] flex flex-start mb-[2%] ml-[2px]"
+                  >
+                    Company Sector*
+                  </Label>
+                  <Select required name="sector">
+                    <SelectTrigger className="text-black bg-[#D9D9D9] rounded mb-[6%] w-full">
+                      <SelectValue placeholder="Select a sector" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup className="text-black bg-[#D9D9D9]">
+                        <SelectItem value="it">IT</SelectItem>
+                        <SelectItem value="human_resource">
+                          Human Resource
+                        </SelectItem>
+                        <SelectItem value="manufacturing">
+                          Manufacturing
+                        </SelectItem>
+                        <SelectItem value="auto_mobiles">
+                          Auto Mobiles
+                        </SelectItem>
+                        <SelectItem value="furniture">Furniture</SelectItem>
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                   <Label
                     htmlFor="name"
                     className="text-[#D9D9D9] flex flex-start mb-[2%] ml-[2px]"
