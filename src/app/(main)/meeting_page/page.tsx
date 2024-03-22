@@ -8,13 +8,7 @@ const MeetingPage = () => {
   const [meeting, setMeeting] = useState(false);
   return (
     <>
-      {meeting ? (
-        <MyMeetingUI />
-      ) : (
-        <Button onClick={() => setMeeting(true)} className="bg-[#f00]">
-          Click For Meeting
-        </Button>
-      )}
+      <MyMeetingUI />
     </>
   );
 };

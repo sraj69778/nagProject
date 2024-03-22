@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export const ContentTile = ({ content }: { content: any }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   const handleTileClick = () => {
     setIsModalOpen(true);
@@ -49,9 +51,9 @@ export const ContentTile = ({ content }: { content: any }) => {
             <div>
               <button
                 className="mt-4 bg-blue-500 text-white px-4  m-2 py-2 rounded"
-                onClick={closeModal}
+                onClick={() => router.push("/meeting_page")}
               >
-                Accept Request
+                Start Meeting
               </button>
               <button
                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
