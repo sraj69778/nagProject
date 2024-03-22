@@ -93,7 +93,7 @@ const Dashboard = () => {
 
           <div className="flex">
             {/* <Messages /> */}
-            <Requests />
+            <Requests content={data} />
           </div>
         </div>
       </>
