@@ -3,7 +3,8 @@ import ContentTile from "../content-tile";
 import Image from "next/image";
 
 const Requests = (props: any) => {
-  const data = props?.content?.data?.response?.requirements;
+  const data = props;
+  console.log(data?.content?.data);
 
   return (
     <>
@@ -22,7 +23,7 @@ const Requests = (props: any) => {
         </div>
         <Separator className="bg-[#d7d7d7] mx-auto h-[0.2rem] text-center " />
         <div className="flex flex-col flex-wrap w-[100%] h-[100%] overflow-hidden my-[2%] py-[1%]">
-          {data?.map((request: any) => {
+          {data?.content?.data?.map((request: any) => {
             console.log("Ayush");
             console.log(request);
             if (request?.isAccepted) {

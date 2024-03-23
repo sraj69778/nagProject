@@ -49,7 +49,7 @@ export const ContentTile = ({ content }: { content: any }) => {
             <p className="">{content.product_desc}</p>
             <p>{content.date}</p>
             <div>
-              {content?.isAccepted ? (
+              {/* {content?.isAccepted ? (
                 <button
                   className="mt-4 bg-blue-500 text-white px-4  m-2 py-2 rounded"
                   onClick={() => router.push("/meeting_page")}
@@ -63,7 +63,7 @@ export const ContentTile = ({ content }: { content: any }) => {
                 >
                   Accept request
                 </button>
-              )}
+              )} */}
 
               <button
                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
