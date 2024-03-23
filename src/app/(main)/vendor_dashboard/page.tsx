@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import Messages from "../page-components/Messages";
-import Requests from "../page-components/Requests";
 import { Button } from "@/components/ui/button";
 import ContentTile from "../page-components/content-tile";
 import { useRouter } from "next/navigation";
+import Pitches from "../page-components/Pitches";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -79,8 +79,8 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex">
-          <Messages />
-          <Requests />
+          {/* <Messages /> */}
+          <Pitches />
         </div>
       </div>
     </>

@@ -26,79 +26,79 @@ const Requests = () => {
 
   // console.log(data?.data?.response?.requirements);
 
-  // const requests = [
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //     budget: "200k-300k",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  //   {
-  //     imgPath: "/display-picture/display.png",
-  //     title: "ABC Company",
-  //     description:
-  //       "Description about the company and the project it is offering ...",
-  //     date: "12 March 2024",
-  //   },
-  // ];
+  const requests = [
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+      budget: "200k-300k",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+    {
+      imgPath: "/display-picture/display.png",
+      title: "ABC Company",
+      description:
+        "Description about the company and the project it is offering ...",
+      date: "12 March 2024",
+    },
+  ];
 
   if (data) {
     return (
@@ -118,13 +118,8 @@ const Requests = () => {
             <Separator className="bg-[#d7d7d7] mx-auto h-[0.2rem] text-center " />
             <div className="flex flex-col h-[90%] w-[100%]">
               <div className="flex flex-col flex-wrap w-[100%] h-[90%] m-0">
-                {data?.data?.response?.requirements.map((request: any) => {
-                  console.log();
-                  if (request.isAccepted) {
-                    return <></>;
-                  } else {
-                    return <ContentTile content={request} />;
-                  }
+                {requests.map((request: any) => {
+                  return <ContentTile content={request} />;
                 })}
               </div>
               <div className="h-[10%] flex items-center justify-center m-0">
