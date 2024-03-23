@@ -7,6 +7,14 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectGroup,
+} from "@/components/ui/select";
 
 const Requirement: React.FC = () => {
   const notify = () =>
@@ -48,7 +56,7 @@ const Requirement: React.FC = () => {
   if (isSuccess) {
     notify();
     setTimeout(() => {
-      router.push("/requests");
+      router.push("/client_dashboard");
     }, 2000);
   } else if (isError) {
     error();
@@ -77,6 +85,7 @@ const Requirement: React.FC = () => {
                 budget_min: event.target.min_budget.value,
                 budget_max: event.target.max_budget.value,
                 isAccepted: false,
+                sector: event.target.sector.value,
               });
 
               // console.log(user.user.email);
@@ -101,9 +110,28 @@ const Requirement: React.FC = () => {
               <textarea
                 name="description"
                 id="description"
-                className="bg-[#D9D9D9] mt-[10px] rounded w-full p-2 resize-none"
+                className="bg-[#D9D9D9] mt-[10px]  rounded w-full p-2 resize-none"
                 rows={3}
               ></textarea>
+            </div>
+            <div className="mt-[1.5rem]">
+              <Label className="text-[#D9D9D9] ">Sector</Label>
+              <Select required name="sector">
+                <SelectTrigger className="text-black bg-[#D9D9D9] rounded mb-[6%] w-full">
+                  <SelectValue placeholder="Select a sector" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup className="text-black bg-[#D9D9D9]">
+                    <SelectItem value="IT">IT</SelectItem>
+                    <SelectItem value="Human Resource">
+                      Human Resource
+                    </SelectItem>
+                    <SelectItem value="Manufacturing">Manufacturing</SelectItem>
+                    <SelectItem value="Auto Mobiles">Auto Mobiles</SelectItem>
+                    <SelectItem value="Furniture">Furniture</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </div>
             <div className="flex flex-col mt-[4%] w-[100%]">
               <Label className="text-[#D9D9D9]">Budget</Label>

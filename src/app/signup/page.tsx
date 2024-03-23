@@ -168,14 +168,14 @@ const SignUp = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup className="text-black bg-[#D9D9D9]">
-                        <SelectItem value="it">IT</SelectItem>
-                        <SelectItem value="human_resource">
+                        <SelectItem value="IT">IT</SelectItem>
+                        <SelectItem value="Human Resource">
                           Human Resource
                         </SelectItem>
-                        <SelectItem value="manufacturing">
+                        <SelectItem value="Manufacturing">
                           Manufacturing
                         </SelectItem>
-                        <SelectItem value="auto_mobiles">
+                        <SelectItem value="Auto Mobiles">
                           Auto Mobiles
                         </SelectItem>
                         <SelectItem value="furniture">Furniture</SelectItem>
