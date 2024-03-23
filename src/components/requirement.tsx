@@ -48,7 +48,7 @@ const Requirement: React.FC = () => {
   const { mutate, isError, isSuccess, isPending, data }: any = useMutation({
     mutationFn: (requirement) => {
       return axios
-        .post("http://localhost:3000/requirements/post", requirement)
+        .post("http://3.6.132.27/api/requirements/post", requirement)
         .then((res) => res.data);
     },
   });

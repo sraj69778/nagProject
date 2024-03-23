@@ -75,7 +75,7 @@ const Chats = () => {
   const { mutate, isError, isSuccess }: any = useMutation({
     mutationFn: (newChatUser) => {
       return axios
-        .post("http://localhost:3000/authenticate", newChatUser)
+        .post("http://3.6.132.27/api/authenticate", newChatUser)
         .then((resposne) => console.log(resposne));
     },
   });

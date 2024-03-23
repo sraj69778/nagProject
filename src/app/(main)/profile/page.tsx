@@ -23,7 +23,7 @@ const Profile = () => {
     queryKey: ["first-data"],
     queryFn: () =>
       axios
-        .get(`http://localhost:3000/user/${email}/${role}`)
+        .get(`http://3.6.132.27/api/user/${email}/${role}`)
         .then((res) => res.data),
   });
 

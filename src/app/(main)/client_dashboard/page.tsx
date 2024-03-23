@@ -21,7 +21,7 @@ const Dashboard = () => {
   const { isPending, error, data, isFetching } = useQuery({
     queryKey: ["requirements-requests"],
     queryFn: () =>
-      axios.get(`http://localhost:3000/requirements/${userData.user.email}`),
+      axios.get(`http://3.6.132.27/api/requirements/${userData.user.email}`),
   });
 
   const contents = [

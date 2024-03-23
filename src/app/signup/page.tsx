@@ -52,7 +52,7 @@ const SignUp = () => {
   const { mutate, isError, isSuccess, isPending, data }: any = useMutation({
     mutationFn: (newUser) => {
       return axios
-        .post("http://localhost:3000/user/signup", newUser)
+        .post("http://3.6.132.27/api/user/signup", newUser)
         .then((res) => res.data);
     },
   });
@@ -64,7 +64,7 @@ const SignUp = () => {
   }: any = useMutation({
     mutationFn: (newChatUser) => {
       return axios
-        .post("http://localhost:3000/authenticate", newChatUser)
+        .post("http://3.6.132.27/api/authenticate", newChatUser)
         .then((resposne) => console.log(resposne));
     },
   });

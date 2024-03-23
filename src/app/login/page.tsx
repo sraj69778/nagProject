@@ -46,7 +46,7 @@ const Login = () => {
     useMutation({
       mutationFn: (user) => {
         return axios
-          .post("http://localhost:3000/user/login", user)
+          .post("http://3.6.132.27/api/user/login", user)
           .then((res) => res.data);
       },
     });
