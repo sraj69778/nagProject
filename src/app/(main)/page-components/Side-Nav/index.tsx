@@ -44,18 +44,25 @@ const SideNav = () => {
   ];
   return (
     <>
-      <div className="bg-[#fff] w-[18%] h-[96.5vh] m-[1%] rounded-3xl mr-[1%] py-[1%]">
+      {/* <div className="bg-[#fff] w-[18%] h-[96.5vh] m-[1%] rounded-3xl mr-[1%] py-[1%]"> */}
+      <div className="bg-[#0d1117] w-[100vw] h-[80px]  py-[1%] ">
+      </div>
+      <div className=" absolute bg-[#0d1117] w-[18%] h-[100vh]  py-[1%] mt-[80px]">
         <div className="flex items-center justify-center">
-          <img
+          <div className="h-[30px] border-solid border-white border-2 p-[20%]">
+            <i className="fa fa-angle-down text-neutral-50"> <span>Abhijeet Nag</span></i>
+          </div>
+          {/* <img
             src={"/Project_Logo.svg"}
             className="h-auto w-[15.5%]"
             alt="Project Logo"
           ></img>
           <h1 className="text-[#717171] lg:text-[28px] ml-[5%] md:text-[24px] font-bold">
             Discuz Pro
-          </h1>
+          </h1> */}
+
         </div>
-        <Separator className="bg-[#d7d7d7] w-[90%] mx-auto h-[0.2rem] text-center " />
+        {/* <Separator className="bg-[#d7d7d7] w-[90%] mx-auto h-[0.2rem] text-center " /> */}
         {/* Side Nav Buttons */}
         <div>
           {options.map((option) => (

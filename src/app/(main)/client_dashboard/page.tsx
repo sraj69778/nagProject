@@ -11,9 +11,9 @@ import axios from "axios";
 
 const Dashboard = () => {
   const router = useRouter();
-  if (!sessionStorage.getItem("userData")) {
-    router.push("/login");
-  }
+  // if (!sessionStorage.getItem("userData")) {
+  //   router.push("/login");
+  // }
 
   let userData: any = sessionStorage.getItem("userData");
   userData = JSON.parse(userData);
